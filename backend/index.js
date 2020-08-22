@@ -5,6 +5,8 @@ let bodyParser = require('body-parser');
 // Import Mongoose
 let mongoose = require('mongoose');
 
+const cors = require('cors');
+
 // Initialize the app
 let app = express()
 
@@ -17,6 +19,7 @@ app.use(bodyParser.urlencoded({
  }));
 
  app.use(bodyParser.json());
+ app.use(cors());
 
  // Connect to Mongoose and set connection variable
 mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
@@ -29,7 +32,7 @@ else
     console.log("Db connected successfully")
 
 // Setup server port
-var port = process.env.port || 8080;
+var port = process.env.port || 5000;
 
 // Send message for default URL
 app.get('/', (req, res) => {
