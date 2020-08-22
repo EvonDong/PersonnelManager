@@ -1,0 +1,22 @@
+{
+  "name": "resthub",
+  "version": "1.0.0",
+  "description": "An app that demonstrates simple Restful API implementation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "dev": "nodemon backend/index.js"
+  },
+  "keywords": [
+    "api",
+    "restful",
+    "json"
+  ],
+  "author": "Evon Dong",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.0"
+  }
+}
