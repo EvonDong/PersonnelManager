@@ -1,8 +1,12 @@
 var mongoose = require('mongoose');
 
 // Setup schema
-var contactSchema = mongoose.Schema({
+var profileSchema = mongoose.Schema({
     name: {
+        type: String,
+        required: true
+    },
+    role: {
         type: String,
         required: true
     },
@@ -12,15 +16,15 @@ var contactSchema = mongoose.Schema({
     },
     gender: String,
     phone: String,
-    createDate: {
+    createdAt: {
         type: Date,
         default: Date.now
     },
 })
 
-// Export Contact model
-var Contact = module.exports = mongoose.model('contact', contactSchema);
+// Export Profile model
+var Profile = module.exports = mongoose.model('profile', profileSchema);
 
 module.exports.get = function(callback, limit) {
-    Contact.find(callback).limit(limit);
+    Profile.find(callback).limit(limit);
 }

@@ -1,10 +1,6 @@
-// Import express
 let express = require('express')
-// Import Body parser
 let bodyParser = require('body-parser');
-// Import Mongoose
 let mongoose = require('mongoose');
-
 const cors = require('cors');
 
 // Initialize the app
@@ -29,14 +25,14 @@ var db = mongoose.connection;
 if(!db)
     console.log("Error connecting db")
 else
-    console.log("Db connected successfully")
+    console.log("Database connected successfully")
 
 // Setup server port
 var port = process.env.port || 5000;
 
 // Send message for default URL
 app.get('/', (req, res) => {
-    res.send("Helloooo world created with expressss");
+    res.send("This is the backend created using express");
 })
 
 // Use Api routes in the App

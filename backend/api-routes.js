@@ -9,19 +9,19 @@ router.get('/', function(req, res) {
     });
 });
 
-// Import contact controller
-var contactController = require('./contactController');
+// Import profile controller
+var profileController = require('./profileController');
 
-// Contact routes
-router.route('/contacts')
-    .get(contactController.index)
-    .post(contactController.new);
+// Profile routes
+router.route('/profiles')
+    .get(profileController.index)
+    .post(profileController.new);
 
-router.route('/contacts/:contact_id')
-    .get(contactController.view)
-    .patch(contactController.update)
-    .put(contactController.update)
-    .delete(contactController.delete);
+router.route('/profiles/:profile_id')
+    .get(profileController.view)
+    .put(profileController.update)
+    .patch(profileController.update)
+    .delete(profileController.delete);
 
 
 // Export API routes
