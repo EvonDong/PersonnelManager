@@ -4,8 +4,8 @@ let router = require('express').Router();
 // Set default API response
 router.get('/', function(req, res) {
     res.json({
-        status: 'API is working',
-        message: "Welcommee to RESTHub"
+        status: 'Great, rest API is functioning',
+        message: "Welcomeee to RestHub"
     });
 });
 
