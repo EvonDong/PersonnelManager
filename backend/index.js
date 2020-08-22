@@ -39,11 +39,11 @@ app.get('/', (req, res) => {
 app.use('/api', apiRoutes);
 
 // Launch app to listen to specified port
-app.listen(port, function() {
+const server = app.listen(port, function() {
     console.log("Running REST hub on port " + port);
 })
 
-
+module.exports = server;
 
 
 

@@ -2,7 +2,7 @@
 Profile = require('./profileModel');
 
 // Handle index actions
-exports.index = function(req, res) {
+exports.getAll = function(req, res) {
     Profile.get(function(err, profile) {
         if (err) {
             res.json({
@@ -29,26 +29,27 @@ exports.new = function(req, res) {
 
     // save the profile and check for errors
     profile.save(function (err) {
-        // if (err)
-        //     res.json(err);
-
-        res.json({
-            message: "New profile created",
-            data: profile
-        });
+        if (err) {
+            res.send(err);
+          } else {
+              res.json({
+                message: "New profile created",
+                data: profile
+            });
+        }
     });
 }
 
 // Handle view profile info
-exports.view = function(req, res) {
+exports.getSpecificProfile = function(req, res) {
     Profile.findById(req.params.profile_id, function(err, profile) {
         if (err) {
             res.send(err);
-            res.json({
-                message: "Profile details loading...",
-                data: profile
-            });
         }
+        res.json({
+            message: "Profile details loading...",
+            data: profile
+        });
     });
 };
 
@@ -92,6 +93,23 @@ exports.delete = function(req, res) {
         })
     })
 };
+
+
+// Use dummy for testing
+let dummyProfile = require("./dummyData/dummyProfiles");
+
+exports.testGetOne = function(req, res) {
+    const findProfile = dummyProfile.find(profile => profile.id === parseInt(req.params.id));
+    if (findProfile) {
+        return res.status(200).json({
+            data: findProfile,
+            message: "Profile details loading..."
+        });
+    }
+    return res.status(404).json({
+        message: "Record not found."
+    })
+}
 
 
 

@@ -14,14 +14,18 @@ var profileController = require('./profileController');
 
 // Profile routes
 router.route('/profiles')
-    .get(profileController.index)
+    .get(profileController.getAll)
     .post(profileController.new);
 
 router.route('/profiles/:profile_id')
-    .get(profileController.view)
+    .get(profileController.getSpecificProfile)
     .put(profileController.update)
     .patch(profileController.update)
     .delete(profileController.delete);
+
+
+router.route('/dummytest/profiles/:id')
+    .get(profileController.testGetOne)
 
 
 // Export API routes
