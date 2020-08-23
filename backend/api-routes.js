@@ -5,7 +5,7 @@ let router = require('express').Router();
 router.get('/', function(req, res) {
     res.json({
         status: 'Great, rest API is functioning',
-        message: "Welcomeee to RestHub"
+        message: "Welcomeee to PersonnelManager"
     });
 });
 

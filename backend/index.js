@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
  app.use(cors());
 
  // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/personnelmanager', { useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -40,7 +40,7 @@ app.use('/api', apiRoutes);
 
 // Launch app to listen to specified port
 const server = app.listen(port, function() {
-    console.log("Running REST hub on port " + port);
+    console.log("Running Personnel Manager on port " + port);
 })
 
 module.exports = server;
