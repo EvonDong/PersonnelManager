@@ -68,8 +68,10 @@ describe('api/profiles', () => {
 
     describe('GET /profiles', () => {
         it('supposed to get 0 profile', (done) => {
-            Profile.remove({}, (err) => {
-                done();
+            Profile.deleteMany({}, (err) => {
+                if (err) {
+                    console.log(err);
+                }
             });
 
             chai.request(app)
