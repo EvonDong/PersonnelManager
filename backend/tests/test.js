@@ -60,6 +60,12 @@ describe('api/profiles', () => {
         
     // });
 
+    beforeEach((done) => { //Before each test we fill in the database
+        Profile.remove({}, (err) => {
+          done();
+        });
+    });
+
     describe('GET /profiles', () => {
         it('supposed to get 0 profile', (done) => {
             chai.request(app)
