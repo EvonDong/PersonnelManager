@@ -45,20 +45,20 @@ var expect = require('chai').expect;
 // });
 
 describe('api/profiles', () => {
-    beforeEach(async () => {
-        // this.timeout(60000); 
-        await Profile.deleteMany({}, function(err) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log('Successfully removed all data before test.');
-            }
-            // done();
-        // Profile.remove({}, function (err) { 
-        //     done();         
-           });
+    // beforeEach(async () => {
+    //     // this.timeout(60000); 
+    //     await Profile.deleteMany({}, function(err) {
+    //         if (err) {
+    //             console.log(err);
+    //         } else {
+    //             console.log('Successfully removed all data before test.');
+    //         }
+    //         // done();
+    //     // Profile.remove({}, function (err) { 
+    //     //     done();         
+    //        });
         
-    });
+    // });
 
     describe('GET /profiles', () => {
         it('supposed to get 0 profile', (done) => {
@@ -179,11 +179,11 @@ describe('api/profiles', () => {
     //     done();
     // });
 
-    after((done) => {
-        mongoose.connection.db.dropDatabase(() => {
-            mongoose.connection.close(done);
-        });
-    });
+    // after((done) => {
+    //     mongoose.connection.db.dropDatabase(() => {
+    //         mongoose.connection.close(done);
+    //     });
+    // });
 
 });
 
