@@ -32,9 +32,9 @@ else
 
 
 // Send message for default URL
-app.get('/', (req, res) => {
-    res.send("This is the backend created using express!");
-})
+// app.get('/', (req, res) => {
+//     res.send("This is the backend created using express!");
+// })
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
