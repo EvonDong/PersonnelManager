@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node backend/index.js",
     "dev": "nodemon backend/index.js",
-    "test": "mocha backend/tests/test.js --timeout 100000 --exit"
+    "test": "mocha backend/tests/test.js --exit"
   },
   "keywords": [
     "api",
