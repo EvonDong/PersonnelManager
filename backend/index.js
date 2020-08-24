@@ -38,6 +38,15 @@ app.get('/', (req, res) => {
 // Use Api routes in the App
 app.use('/api', apiRoutes);
 
+// Handle production
+if(process.env.NODE_ENV === "production") {            // true when deploy to heroku
+    app.use(express.static(__dirname + '/public'));
+
+    // Handle SPA(Single Page Application)
+    app.get(/.*/, (res, req) => res.sendFile(__dirname, 'public/index.html'));                       // refer to any route
+}
+
+
 // Launch app to listen to specified port
 const server = app.listen(port, function() {
     console.log("Running Personnel Manager on port " + port);
