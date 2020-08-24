@@ -45,7 +45,7 @@ if(process.env.NODE_ENV === "production") {            // true when deploy to he
     app.use(express.static(__dirname + '/public'));
 
     // Handle SPA(Single Page Application)
-    app.get(/.*/, (res, req) => res.sendFile(__dirname, 'public/index.html'));                       // refer to any route
+    app.get(/.*/, (res, req) => res.sendFile(__dirname, '/public/index.html'));                       // refer to any route
 }
 
 
