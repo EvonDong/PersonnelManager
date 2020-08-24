@@ -67,6 +67,7 @@ describe('api/profiles', () => {
     // });
 
     describe('GET /profiles', () => {
+        // holder.timeout(10000);
         it('supposed to get 0 profile', (done) => {
             Profile.deleteMany({}, (err) => {
                 if (err) {
@@ -83,7 +84,7 @@ describe('api/profiles', () => {
                 res.body.should.have.property('message').eql('Profiles retrieved successfully!');
                 done();
              });
-        });
+        }).timeout(10000);
     });
 
     describe('POST /profiles', () => {
