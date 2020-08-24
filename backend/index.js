@@ -29,8 +29,7 @@ if(!db)
 else
     console.log("Database connected successfully")
 
-// Setup server port
-var port = process.env.PORT || 5000;
+
 
 // Send message for default URL
 app.get('/', (req, res) => {
@@ -48,6 +47,8 @@ if(process.env.NODE_ENV === "production") {            // true when deploy to he
     app.get(/.*/, (res, req) => res.sendFile(__dirname, '/public/index.html'));                       // refer to any route
 }
 
+// Setup server port
+var port = process.env.PORT || 5000;
 
 // Launch app to listen to specified port
 const server = app.listen(port, function() {
