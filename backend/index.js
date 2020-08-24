@@ -2,6 +2,7 @@ let express = require('express')
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 const cors = require('cors');
+const URI = require('./connection');
 
 // Initialize the app
 let app = express()
@@ -18,7 +19,8 @@ app.use(bodyParser.urlencoded({
  app.use(cors());
 
  // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/personnelmanager', { useUnifiedTopology: true, useNewUrlParser: true});
+mongoose.connect(URI, { useUnifiedTopology: true, useNewUrlParser: true});
+//mongoose.connect('mongodb://localhost/personnelmanager', { useUnifiedTopology: true, useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
