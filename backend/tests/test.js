@@ -44,16 +44,16 @@ var expect = require('chai').expect;
 // });
 
 describe('api/profiles', () => {
-    beforeEach(async () => {
-        await Profile.deleteMany({}, function(err) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log('Successfully removed all data before test.');
-            }
+    // beforeEach(async () => {
+    //     await Profile.deleteMany({}, function(err) {
+    //         if (err) {
+    //             console.log(err);
+    //         } else {
+    //             console.log('Successfully removed all data before test.');
+    //         }
         
-        });
-    });
+    //     });
+    // });
 
     describe('GET /profiles', () => {
         it('supposed to get 0 profile', (done) => {
@@ -163,16 +163,16 @@ describe('api/profiles', () => {
         });
     });
 
-    afterEach(async () => {
-        await Profile.deleteMany({}, function(err) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log('Successfully removed all data after test.');
-            }
-        });
+    // afterEach(async () => {
+    //     await Profile.deleteMany({}, function(err) {
+    //         if (err) {
+    //             console.log(err);
+    //         } else {
+    //             console.log('Successfully removed all data after test.');
+    //         }
+    //     });
         
-    });
+    // });
 });
 
 
