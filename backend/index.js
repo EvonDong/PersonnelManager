@@ -41,11 +41,11 @@ app.use('/api', apiRoutes);
 
 // Handle production
 if(process.env.NODE_ENV === "production") {            // true when deploy to heroku
-    app.use('/', express.static(__dirname + '/public'));
+    app.use('/', express.static(__dirname + '/public/'));
 
     // Handle SPA(Single Page Application)
     // app.get(/.*/, (req, res) => res.sendFile(__dirname, '/public/index.html'));                       // refer to any route
-    app.get(/.*/, (req, res) => res.sendFile(__dirname, '/public', 'index.html')); 
+    app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html')); 
 }
 
 // Setup server port
