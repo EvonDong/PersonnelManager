@@ -46,8 +46,11 @@ if(process.env.NODE_ENV === "production") {            // true when deploy to he
     // Handle SPA(Single Page Application)
     // app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));                       // refer to any route
     app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public'), {index: 'index.html'})); 
+} else {
+    app.get('/', (req, res) => {
+        res.send("This is the backend created using express!");
+    })
 }
-
 
 // Setup server port
 var port = process.env.PORT || 5000;
