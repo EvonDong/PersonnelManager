@@ -83,7 +83,7 @@ describe('api/profiles', () => {
                 res.body.should.have.property('message').eql('Profiles retrieved successfully!');
                 done();
              });
-        });
+        }).timeout(10000);;
     });
 
     describe('POST /profiles', () => {
