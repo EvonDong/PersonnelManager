@@ -5,6 +5,8 @@ let Profile = require("../profileModel");
 
 chai.use(chaiHttp);
 chai.should();
+
+// should = require('should-promised');
 var expect = require('chai').expect;
 
 // describe('Get profiles', () => {
@@ -49,6 +51,7 @@ describe('api/profiles', () => {
             } else {
                 console.log('Successfully removed all data before test.');
             }
+        
         });
     });
 
@@ -168,6 +171,7 @@ describe('api/profiles', () => {
                 console.log('Successfully removed all data after test.');
             }
         });
+        
     });
 });
 
