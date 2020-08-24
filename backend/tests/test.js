@@ -45,13 +45,14 @@ var expect = require('chai').expect;
 // });
 
 describe('api/profiles', () => {
-    beforeEach(async () => {
-        await Profile.deleteMany({}, function(err) {
+    beforeEach((done) => {
+        Profile.deleteMany({}, function(err) {
             if (err) {
                 console.log(err);
             } else {
                 console.log('Successfully removed all data before test.');
             }
+            done();
         
         });
     });
@@ -164,15 +165,15 @@ describe('api/profiles', () => {
         });
     });
 
-    afterEach(async () => {
-        await Profile.deleteMany({}, function(err) {
+    afterEach((done) => {
+        Profile.deleteMany({}, function(err) {
             if (err) {
                 console.log(err);
             } else {
                 console.log('Successfully removed all data after test.');
             }
         });
-        
+        done();
     });
 
     after((done) => {
