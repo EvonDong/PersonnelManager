@@ -7,39 +7,39 @@ chai.use(chaiHttp);
 chai.should();
 var expect = require('chai').expect;
 
-describe('Get profiles', () => {
-    it('supposed to retrieve all profiles', (done) => {
-        chai.request(app)
-            .get('/api/profiles')
-            .end((err, res) => {
-                res.should.have.status(200);
-                res.body.should.be.a('object');
-                done();
-             });
-    });
+// describe('Get profiles', () => {
+//     it('supposed to retrieve all profiles', (done) => {
+//         chai.request(app)
+//             .get('/api/profiles')
+//             .end((err, res) => {
+//                 res.should.have.status(200);
+//                 res.body.should.be.a('object');
+//                 done();
+//              });
+//     });
 
-    it('supposed to retrieve one profile', (done) => {
-        const id = 1;
-        chai.request(app)
-            .get(`/api/dummytest/profiles/${id}`)
-            .end((err, res) => {
-                res.should.have.status(200);
-                res.body.should.be.a('object');
-                done();
-             });
-    });
+//     it('supposed to retrieve one profile', (done) => {
+//         const id = 1;
+//         chai.request(app)
+//             .get(`/api/dummytest/profiles/${id}`)
+//             .end((err, res) => {
+//                 res.should.have.status(200);
+//                 res.body.should.be.a('object');
+//                 done();
+//              });
+//     });
 
-    it('not supposed to retrieve any profile', (done) => {
-        const id = 9;
-        chai.request(app)
-            .get(`/api/dummytest/profiles/${id}`)
-            .end((err, res) => {
-                res.should.have.status(404);
-                res.body.should.be.a('object');
-                done();
-             });
-    });
-});
+//     it('not supposed to retrieve any profile', (done) => {
+//         const id = 9;
+//         chai.request(app)
+//             .get(`/api/dummytest/profiles/${id}`)
+//             .end((err, res) => {
+//                 res.should.have.status(404);
+//                 res.body.should.be.a('object');
+//                 done();
+//              });
+//     });
+// });
 
 describe('api/profiles', () => {
     beforeEach(async () => {
