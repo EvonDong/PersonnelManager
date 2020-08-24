@@ -10,44 +10,44 @@ chai.should();
 // should = require('should-promised');
 var expect = require('chai').expect;
 
-// describe('Get profiles', () => {
-//     it('supposed to retrieve all profiles', (done) => {
-//         chai.request(app)
-//             .get('/api/profiles')
-//             .end((err, res) => {
-//                 res.should.have.status(200);
-//                 res.body.should.be.a('object');
-//                 done();
-//              });
-//     });
+describe('Get profiles', () => {
+    it('supposed to retrieve all profiles', (done) => {
+        chai.request(app)
+            .get('/api/profiles')
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.should.be.a('object');
+                done();
+             });
+    });
 
-//     it('supposed to retrieve one profile', (done) => {
-//         const id = 1;
-//         chai.request(app)
-//             .get(`/api/dummytest/profiles/${id}`)
-//             .end((err, res) => {
-//                 res.should.have.status(200);
-//                 res.body.should.be.a('object');
-//                 done();
-//              });
-//     });
+    it('supposed to retrieve one profile', (done) => {
+        const id = 1;
+        chai.request(app)
+            .get(`/api/dummytest/profiles/${id}`)
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.should.be.a('object');
+                done();
+             });
+    });
 
-//     it('not supposed to retrieve any profile', (done) => {
-//         const id = 9;
-//         chai.request(app)
-//             .get(`/api/dummytest/profiles/${id}`)
-//             .end((err, res) => {
-//                 res.should.have.status(404);
-//                 res.body.should.be.a('object');
-//                 done();
-//              });
-//     });
-// });
+    it('not supposed to retrieve any profile', (done) => {
+        const id = 9;
+        chai.request(app)
+            .get(`/api/dummytest/profiles/${id}`)
+            .end((err, res) => {
+                res.should.have.status(404);
+                res.body.should.be.a('object');
+                done();
+             });
+    });
+});
 
 describe('api/profiles', () => {
-    // beforeEach(async () => {
+    // beforeEach((done) => {
     //     // this.timeout(60000); 
-    //     await Profile.deleteMany({}, function(err) {
+    //     Profile.deleteMany({}, err => {
     //         if (err) {
     //             console.log(err);
     //         } else {
@@ -56,7 +56,7 @@ describe('api/profiles', () => {
     //         // done();
     //     // Profile.remove({}, function (err) { 
     //     //     done();         
-    //        });
+    //        }).timeout(10000);
         
     // });
 
@@ -67,7 +67,6 @@ describe('api/profiles', () => {
     // });
 
     describe('GET /profiles', () => {
-        // holder.timeout(10000);
         it('supposed to get 0 profile', (done) => {
             Profile.deleteMany({}, (err) => {
                 if (err) {
@@ -84,7 +83,7 @@ describe('api/profiles', () => {
                 res.body.should.have.property('message').eql('Profiles retrieved successfully!');
                 done();
              });
-        }).timeout(10000);
+        });
     });
 
     describe('POST /profiles', () => {
