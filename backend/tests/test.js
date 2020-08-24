@@ -1,6 +1,7 @@
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let app = require("../index");
+const mongoose = require('mongoose');
 let Profile = require("../profileModel");
 
 chai.use(chaiHttp);
@@ -173,6 +174,12 @@ describe('api/profiles', () => {
     //     });
         
     // });
+
+    after((done) => {
+        mongoose.connection.db.dropDatabase(() => {
+            mongoose.connection.close(done);
+        });
+    });
 });
 
 
