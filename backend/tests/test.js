@@ -19,7 +19,7 @@ describe('Get profiles', () => {
                 res.body.should.be.a('object');
                 done();
              });
-    });
+    }).timeout(10000);
 
     it('supposed to retrieve one profile', (done) => {
         const id = 1;
@@ -83,7 +83,7 @@ describe('api/profiles', () => {
                 res.body.should.have.property('message').eql('Profiles retrieved successfully!');
                 done();
              });
-        }).timeout(10000);;
+        }).timeout(10000);
     });
 
     describe('POST /profiles', () => {
@@ -189,12 +189,6 @@ describe('api/profiles', () => {
     //         }
     //     });
     //     done();
-    // });
-
-    // after((done) => {
-    //     mongoose.connection.db.dropDatabase(() => {
-    //         mongoose.connection.close(done);
-    //     });
     // });
 
 });
