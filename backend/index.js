@@ -32,27 +32,22 @@ else
 
 
 // Send message for default URL
-app.get('/', (req, res) => {
-    res.send("This is the backend created using express");
-})
+// app.get('/', (req, res) => {
+//     res.send("This is the backend created using express");
+// })
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
 
 // Handle production
-// if(process.env.NODE_ENV === "production") {            // true when deploy to heroku
-//     app.use(express.static(__dirname + '/public/'));
-
-//     // Handle SPA(Single Page Application)
-//     // app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));                       // refer to any route
-//     app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public'), {index: 'index.html'})); 
-// }
-
-app.use(express.static(__dirname + '/public/'));
+if(process.env.NODE_ENV === "production") {            // true when deploy to heroku
+    app.use(express.static(__dirname + '/public/'));
 
     // Handle SPA(Single Page Application)
     // app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));                       // refer to any route
     app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public'), {index: 'index.html'})); 
+}
+
 
 // Setup server port
 var port = process.env.PORT || 5000;
