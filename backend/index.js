@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
  app.use(cors());
 
  // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/personnelmanager', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/personnelmanager', { useUnifiedTopology: true, useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection

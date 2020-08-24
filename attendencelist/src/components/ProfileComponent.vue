@@ -102,7 +102,7 @@ export default {
       await ProfileService.deleteProfile(id);
       this.profiles = await ProfileService.getProfiles();
     },
-    updateCProfile: async function() {
+    updateProfile: async function() {
       await ProfileService.updateProfile(this.id, this.name, this.role, this.email, this.gender, this.phone);
       this.profiles = await ProfileService.getProfiles();
       this.id = '';

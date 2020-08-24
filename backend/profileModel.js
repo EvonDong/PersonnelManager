@@ -22,6 +22,15 @@ var profileSchema = mongoose.Schema({
     },
 })
 
+profileSchema.pre('save', next => {
+    now = new Date();
+    if(!this.createdAt) {
+      this.createdAt = now;
+    }
+    next();
+  });
+  
+
 // Export Profile model
 var Profile = module.exports = mongoose.model('profile', profileSchema);
 

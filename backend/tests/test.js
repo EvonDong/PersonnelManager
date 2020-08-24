@@ -43,11 +43,11 @@ describe('Get profiles', () => {
 
 describe('api/profiles', () => {
     beforeEach(async () => {
-        await Profile.remove({}, function(err) {
+        await Profile.deleteMany({}, function(err) {
             if (err) {
                 console.log(err);
             } else {
-                console.log('Successfully removed all data before tests.');
+                console.log('Successfully removed all data before test.');
             }
         });
     });
@@ -60,6 +60,7 @@ describe('api/profiles', () => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
                 res.body.data.length.should.be.eql(0);
+                res.body.should.have.property('message').eql('Profiles retrieved successfully!');
                 done();
              });
         });
@@ -108,12 +109,63 @@ describe('api/profiles', () => {
         });
     });
 
+    describe('PUT /profiles/:id', () => {
+        it('supposed to update a profile', (done) => {
+            let testProfile = new Profile({
+                name: "Jack",
+                role: "Treasurer",
+                gender: "Male",
+                email: "jack@gmail.com",
+                phone: "42643213"
+            });
+ 
+            testProfile.save((err, testProfile) => {
+                chai.request(app)
+                    .put('/api/profiles/' + testProfile.id)
+                    .send({name: "Jackie", role: "Manager", gender: "Male", email: "jackie@gmail.com", phone: "31314323"})
+                    .end((err, res) => {
+                        res.should.have.status(200);
+                        res.body.should.be.a('object');
+                        res.body.should.have.property('data').property('name').eql("Jackie");
+                        res.body.should.have.property('data').property('role').eql("Manager");
+                        res.body.should.have.property('data').property('gender').eql("Male");
+                        res.body.should.have.property('data').property('email').eql("jackie@gmail.com");
+                        res.body.should.have.property('data').property('phone').eql("31314323");
+                        done();
+                    });
+            });
+        });
+    });
+
+    describe('DELETE /profiles/:id', () => {
+        it('supposed to delete a profile by id', (done) => {
+            let testProfile = new Profile({
+                name: "Jack",
+                role: "Treasurer",
+                gender: "Male",
+                email: "jack@gmail.com",
+                phone: "42643213"
+            });
+ 
+            testProfile.save((err, testProfile) => {
+                chai.request(app)
+                    .delete('/api/profiles/' + testProfile.id)
+                    .end((err, res) => {
+                        res.should.have.status(200);
+                        res.body.should.be.a('object');
+                        res.body.should.have.property('message').eql('Deleted successfully!');
+                        done();
+                    });
+            });
+        });
+    });
+
     afterEach(async () => {
-        await Profile.remove({}, function(err) {
+        await Profile.deleteMany({}, function(err) {
             if (err) {
                 console.log(err);
             } else {
-                console.log('Successfully removed all data after tests.');
+                console.log('Successfully removed all data after test.');
             }
         });
     });

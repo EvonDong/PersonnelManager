@@ -80,7 +80,7 @@ exports.update = function(req, res) {
 
 // Handle delete profile
 exports.delete = function(req, res) {
-    Profile.remove({
+    Profile.deleteOne({
         _id: req.params.profile_id
     }, function (err, profile) {
         if (err) {
