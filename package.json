@@ -25,6 +25,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^5.2.0",
-    "nodemon": "^1.17.4"
+    "nodemon": "^1.17.4",
+    "serverless": "^1.79.0"
   }
 }
