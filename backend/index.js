@@ -50,7 +50,7 @@ if(process.env.NODE_ENV === "production") {            // true when deploy to he
 }
 
 // Setup server port
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3000;
 
 // Launch app to listen to specified port
 const server = app.listen(port, function() {

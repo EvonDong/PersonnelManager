@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-//const url = "http://localhost:5000/api/profiles/";
+//const url = "http://localhost:3000/api/profiles/";
 const url = "api/profiles/";
 
 class ProfileService {

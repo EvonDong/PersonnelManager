@@ -1,6 +1,6 @@
 const sls = require('serverless-http')
-const app = require('./backend/index')
-module.exports.run = sls(app)
+const server = require('./backend/index')
+module.exports.run = sls(server)
 
 
 
