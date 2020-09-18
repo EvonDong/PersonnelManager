@@ -459,3 +459,11 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless

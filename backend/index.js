@@ -18,6 +18,9 @@ app.use(bodyParser.urlencoded({
  app.use(bodyParser.json());
  app.use(cors());
 
+ const helmet = require('helmet')
+app.use(helmet())
+
  // Connect to Mongoose and set connection variable
 mongoose.connect(URI, { useUnifiedTopology: true, useNewUrlParser: true});
 //mongoose.connect('mongodb://localhost/personnelmanager', { useUnifiedTopology: true, useNewUrlParser: true});
