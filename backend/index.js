@@ -43,33 +43,33 @@ if(process.env.NODE_ENV === "production") {            // true when deploy to he
     // Handle SPA(Single Page Application)
     // app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));                       // refer to any route
     app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public'), {index: 'index.html'})); 
-    module.exports = app;
+    // module.exports = app;
 } else {
     app.get('/', (req, res) => {
         res.send("This is the backend created using express!");
 
     })
 
-    var port = process.env.PORT || 3000;
+    // var port = process.env.PORT || 3000;
 
-    //Launch app to listen to specified port
-    const server = app.listen(port, function() {
-        console.log("Running Personnel Manager on port " + port);
-    })
+    // //Launch app to listen to specified port
+    // const server = app.listen(port, function() {
+    //     console.log("Running Personnel Manager on port " + port);
+    // })
 
-    module.exports = server;
+    // module.exports = server;
 
 }
 
 // Setup server port
-//var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
-// Launch app to listen to specified port
-// const server = app.listen(port, function() {
-//     console.log("Running Personnel Manager on port " + port);
-// })
+//Launch app to listen to specified port
+const server = app.listen(port, function() {
+    console.log("Running Personnel Manager on port " + port);
+})
 
-// module.exports = server;
+module.exports = server;
 
 // module.exports = app;
 
