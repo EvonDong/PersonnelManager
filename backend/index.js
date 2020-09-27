@@ -53,11 +53,13 @@ if(process.env.NODE_ENV === "production") {            // true when deploy to he
 var port = process.env.PORT || 3000;
 
 // Launch app to listen to specified port
-const server = app.listen(port, function() {
-    console.log("Running Personnel Manager on port " + port);
-})
+// const server = app.listen(port, function() {
+//     console.log("Running Personnel Manager on port " + port);
+// })
 
-module.exports = server;
+// module.exports = server;
+
+module.exports = app;
 
 
 
