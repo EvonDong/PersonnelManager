@@ -2,6 +2,8 @@ service: sls-express-mongodb
 
 custom:
   secrets: ${file(secrets.json)}
+  serverless:
+    noPrependStageInUrl: true
   serverless-offline:
     noPrependStageInUrl: true
 
@@ -27,8 +29,8 @@ functions:
           method: ANY
           cors: true
 
-plugins:
-  - serverless-offline
+# plugins:
+#   - serverless-offline
   
 
 # service: sls-express-mongodb
