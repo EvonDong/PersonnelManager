@@ -14,5 +14,5 @@ before_script:
 
 script:
   - cd backend/tests; npm test;
-  - npm install -g serverless;
+  - cd ..; npm install -g serverless;
   - sls deploy;
