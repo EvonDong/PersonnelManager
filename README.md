@@ -3,9 +3,7 @@
 
 ## To run locally:
 
-uncomment out lines 55-60 and comment out line 62 in backend/index.js file
-
-Then, run the following commands:
+Run the following commands:
 
 `git clone https://github.com/EvonDong/PersonnelManager.git`
 
@@ -21,6 +19,7 @@ go to: http://localhost:3000/
 ### To view the frontend:
 
 `cd /attendencelist`
+`npm install`
 `npm run serve`
 
 go to: http://localhost:8080/
@@ -30,8 +29,6 @@ go to: http://localhost:8080/
 To run on Heroku for Task B1 part 2,
 
 https://personnel-assistant-manager.herokuapp.com/
-
-
 
 
 To run on AWS lambda for Task B3,
