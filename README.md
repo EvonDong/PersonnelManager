@@ -13,6 +13,8 @@ Run the following commands:
 
 `cd backend`
 
+`npm install`
+
 `npm start`
 
 go to: http://localhost:3000/
