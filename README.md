@@ -1,27 +1,31 @@
 # PersonnelManager
 
 
-
-
-
-Note: The frontend can be viewed by running locally or going to Heroku.
-
-To run locally:
+## To run locally:
 
 uncomment out lines 55-60 and comment out line 62 in backend/index.js file
 
 Then, run the following commands:
 
-npm install;
+`git clone https://github.com/EvonDong/PersonnelManager.git`
 
-cd bac
+`npm install`
 
-npm start;
+### To view the backend:
 
-cd /attendencelist; 
+`cd backend`
+`npm start`
 
-npm run serve;
+go to: http://localhost:3000/
 
+### To view the frontend:
+
+`cd /attendencelist`
+`npm run serve`
+
+go to: http://localhost:8080/
+
+<br />
 
 To run on Heroku for Task B1 part 2,
 
@@ -32,15 +36,14 @@ https://personnel-assistant-manager.herokuapp.com/
 
 To run on AWS lambda for Task B3,
 
-https://wdlz4u5qlf.execute-api.eu-central-1.amazonaws.com/production/api/profiles
+go to https://wdlz4u5qlf.execute-api.eu-central-1.amazonaws.com/production/api/profiles
 
+<br />
 
+To run tests locally, run the following commands from the root folder:
 
-To run tests locally, run the following commands:
-
-cd backend;
-
-npm test;
+`cd backend;`
+`npm test;`
 
 
 

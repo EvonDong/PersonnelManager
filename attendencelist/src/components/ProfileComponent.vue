@@ -29,8 +29,8 @@
         >
           <b-col>
             <b-card
-              img-src="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-5.jpg"
-              img-alt="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg"
+              img-src="../assets/sampleImg.jpg"
+              img-alt="../assets/sampleImg.jpg"
               img-top
               style="max-width:20rem; max-height:30rem; margin: 0.5rem 0.5rem;"
               class="mb-2">
