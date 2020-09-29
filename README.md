@@ -19,6 +19,8 @@ Run the following commands:
 
 go to: http://localhost:3000/
 
+To access the data, append api/profiles to the back
+
 ### To view the frontend:
 
 `cd /attendencelist`
